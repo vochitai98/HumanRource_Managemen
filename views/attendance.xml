@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="human_resource_attendance_tree_view" model="ir.ui.view">
+        <field name="name">human_resource.attendance.tree</field>
+        <field name="model">human_resource.attendance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" string="Mã Nhân Viên"/>
+                <field name="employee_name" string="Họ và Tên"/>
+                <field name="checkin_time_morning" string="Thời Gian Check-In Buổi Sáng"/>
+                <field name="checkout_time_morning" string="Thời Gian Check-out Buổi Trưa"/>
+                <field name="checkin_time_afternoon" string="Thời Gian Check-In Buổi Chiều"/>
+                <field name="checkout_time_afternoon" string="Thời Gian Check-Out Buổi Chiều"/>
+                <field name="status" string="Trạng Thái"/>
+                <field name="date" string="Ngày"/>
+                <field name="late_minutes_morning" string="Thời Gian Trễ Buổi Sáng (Phút)"/>
+                <field name="late_minutes_afternoon" string="Thời Gian Trễ Buổi Chiều (Phút)"/>
+                <field name="early_checkout_minutes_lunch" string="Thời Gian Về Sớm Buổi Trưa (Phút)"/>
+                <field name="early_checkout_minutes_afternoon" string="Thời Gian Về Sớm Buổi Chiều (Phút)"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="human_resource_attendance_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách thông tin chấm công</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="human_resource_attendance_tree_view" />
+    </record>
+
+</odoo>

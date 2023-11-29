@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_human_resource_root"
+              name="Human Resource"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_employee_data"
+              name="Thông tin nhân viên"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_employee"
+              name="Thông tin cá nhân"
+              parent="menu_human_resource_employee_data"
+              action="human_resource_employee_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_employment_contracts"
+              name="Hợp đồng lao động"
+              parent="menu_human_resource_employee_data"
+              action="employee_contract_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_department"
+              name="Phòng ban"
+              parent="menu_human_resource_root"
+              action="department_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_project"
+              name="Dự án"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_projects"
+              name="Danh sách dự án"
+              parent="menu_human_resource_project"
+              action="human_resource_project_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_task"
+              name="Danh sách nhiệm vụ"
+              parent="menu_human_resource_project"
+              action="human_resource_project_task_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_human_resource_timesheets"
+              name="Thời Gian Làm Việc"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_attendance"
+              name="Bảng chấm công"
+              parent="menu_human_resource_timesheets"
+              action="human_resource_attendance_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_leave_request"
+              name="Yêu cầu nghỉ phép"
+              parent="menu_human_resource_timesheets"
+              action="human_resource_leave_request_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_payroll_"
+              name="Lương và phúc lợi"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+
+    <menuitem id="menu_employee_payroll"
+              name="Bảng lương nhân viên"
+              parent="menu_payroll_"
+              action="human_resource_salary_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_performance"
+              name="Hiệu suất và đánh giá"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+
+    <menuitem id="menu_employee_performance"
+              name="Bảng hiệu suất và đánh giá nhân viên"
+              parent="menu_performance"
+              action="employee_performance_act_window"
+              sequence="10"/>
+
+    <menuitem id="menu_recruitment"
+              name="Tuyển dụng và đào tạo"
+              parent="menu_human_resource_root"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_recruitment_group"
+              name="Tuyển dụng"
+              parent="menu_recruitment"
+              sequence="10"></menuitem>
+
+
+    <menuitem id="menu_recruitment_"
+              name="Bảng tuyển dụng"
+              parent="menu_recruitment_group"
+              action="human_resource_recruitment_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_applicant"
+              name="Thư ứng tuyển"
+              parent="menu_recruitment_group"
+              action="human_resource_applicant_act_window"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_training_group"
+              name="Đào tạo"
+              parent="menu_recruitment"
+              sequence="10"></menuitem>
+
+    <menuitem id="menu_resignation"
+              name="Hồ sơ nghỉ việc"
+              parent="menu_human_resource_root"
+              action="hr_resignation_resignation_act_window"
+              sequence="10"></menuitem>
+</odoo>

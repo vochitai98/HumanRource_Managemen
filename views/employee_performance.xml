@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_performance_tree_view" model="ir.ui.view">
+        <field name="name">employee.performance.tree</field>
+        <field name="model">human_resource.employee_performance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" string="Nhân viên"/>
+                <field name="evaluation_date" string="Ngày đánh giá"/>
+                <field name="evaluator_id" string="Người đánh giá"/>
+                <field name="job_knowledge" string="Kiến thức công việc"/>
+                <field name="work_quality" string="Chất lượng công việc"/>
+                <field name="productivity" string="Năng suất làm việc"/>
+                <field name="communication_skills" string="Kỹ năng giao tiếp"/>
+                <field name="punctuality" string="Đúng giờ"/>
+                <field name="adaptability" string="Khả năng thích nghi"/>
+                <field name="leadership" string="Khả năng lãnh đạo"/>
+                <field name="overall_rating" string="Tổng điểm đánh giá"/>
+                <field name="comments" string="Nhận xét"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_performance_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách đánh giá hiệu suất nhân viên</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.employee_performance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="employee_performance_tree_view" />
+    </record>
+</odoo>

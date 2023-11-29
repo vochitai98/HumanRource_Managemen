@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="department_tree_view" model="ir.ui.view">
+        <field name="name">department.tree</field>
+        <field name="model">human_resource.department</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="department_code" string="Mã bộ phận"/>
+                <field name="name" string="Tên Bộ phận"/>
+                <field name="description" string="Mô tả"/>
+                <field name="parent_id" string="Bộ phận cha"/>
+                <field name="employees" string="Nhân viên" widget="one2many_list" options="{'disable_add_button': True}"/>
+                <field name="child_ids" string="Các bộ phận con" widget="one2many_list" options="{'disable_add_button': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="department_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách bộ phận</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.department</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="department_tree_view" />
+    </record>
+</odoo>

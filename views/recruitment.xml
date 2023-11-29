@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="human_resource_recruitment_tree_view" model="ir.ui.view">
+            <field name="name">human_resource.recruitment.tree</field>
+            <field name="model">human_resource.recruitment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="job_title" string="Vị trí công việc"/>
+                    <field name="department" string="Phòng ban"/>
+                    <field name="number_of_openings" string="Số lượng cần tuyển"/>
+                    <field name="application_deadline" string="Hạn nộp hồ sơ"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="human_resource_recruitment_act_window" model="ir.actions.act_window">
+            <field name="name">Danh sách tuyển dụng</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">human_resource.recruitment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="human_resource_recruitment_tree_view"/>
+        </record>
+    </data>
+</odoo>

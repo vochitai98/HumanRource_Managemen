@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Define the tree view for Resignation -->
+        <record id="hr_resignation_resignation_tree_view" model="ir.ui.view">
+            <field name="name">human_resource.resignation.tree</field>
+            <field name="model">human_resource.resignation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id" string="Nhân viên"/>
+                    <field name="resignation_date" string="Ngày nghỉ việc"/>
+                    <field name="state" string="Trạng thái"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Define the form view for Resignation -->
+        <record id="hr_resignation_resignation_form_view" model="ir.ui.view">
+            <field name="name">human_resource.resignation.form</field>
+            <field name="model">human_resource.resignation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="employee_id" string="Nhân viên"/>
+                            <field name="resignation_date" string="Ngày nghỉ việc"/>
+                            <field name="reason" string="Lý do nghỉ việc"/>
+                            <field name="state" string="Trạng thái"/>
+                            <field name="approved_by" string="Duyệt bởi"/>
+                            <field name="rejection_reason" string="Lý do từ chối"/>
+                        </group>
+                        <notebook>
+                            <page string="Tài liệu đính kèm">
+                                <field name="attachment" widget="binary" filename="attachment_name"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Define the action for Resignation -->
+        <record id="hr_resignation_resignation_act_window" model="ir.actions.act_window">
+            <field name="name">Danh sách đơn nghỉ việc</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">human_resource.resignation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_resignation_resignation_tree_view"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_task_tree_view" model="ir.ui.view">
+        <field name="name">project.task.tree</field>
+        <field name="model">human_resource.project.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="task_id" string="Mã Công việc"/>
+                <field name="name" string="Tên Công việc"/>
+                <field name="project_id" string="Mã dự án"/>
+                <field name="start_date" string="Ngày Bắt đầu"/>
+                <field name="end_date" string="Ngày Kết thúc Dự kiến"/>
+                <field name="status" string="Trạng thái"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="human_resource_project_task_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách Công việc trong Dự án</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.project.task</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="project_task_tree_view" />
+    </record>
+</odoo>

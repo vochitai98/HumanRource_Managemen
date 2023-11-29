@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_contract_tree_view" model="ir.ui.view">
+        <field name="name">employee.contract.tree</field>
+        <field name="model">human_resource.employment_contract</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" string="Mã nhân viên"/>
+                <field name="employee_name" string="Họ và tên"/>
+                <field name="contract_code" string="Mã hợp đồng"/>
+                <field name="start_date" string="Ngày bắt đầu"/>
+                <field name="end_date" string="Ngày kết thúc"/>
+                <field name="job_position" string="Vị trí công việc"/>
+                <field name="department_code" string="Mã bộ phận"/>
+                <field name="contract_type" string="Loại Hợp đồng lao động"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_contract_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách hợp đồng lao động</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.employment_contract</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="employee_contract_tree_view" />
+    </record>
+</odoo>

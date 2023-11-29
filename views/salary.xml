@@ -1,0 +1,33 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="human_resource_salary_tree_view" model="ir.ui.view">
+        <field name="name">human_resource.salary.tree</field>
+        <field name="model">human_resource.salary</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" string="Mã nhân viên"/>
+                <field name="employee_name" string="Tên nhân viên"/>
+                <field name="month" string="Tháng"/>
+                <field name="basic_salary" string="Mức lương cơ bản"/>
+                <field name="responsibility_allowance" string="Phụ cấp trách nhiệm"/>
+                <field name="performance_allowance" string="Phụ cấp hiệu suất"/>
+                <field name="travel_allowance" string="Công tác phí"/>
+                <field name="rewards" string="Khen thưởng"/>
+                <field name="social_insurance" string="Bảo hiểm xã hội"/>
+                <field name="other_benefits" string="Các chế độ được hưởng"/>
+                <field name="termination_agreement" string="Thỏa thuận khác"/>
+                <field name="overtime_income" string="Thu nhập từ làm thêm"/>
+                <field name="total_income" string="Tổng thu nhập"/>
+                <field name="net_income" string="Thu nhập ròng"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="human_resource_salary_act_window" model="ir.actions.act_window">
+        <field name="name">Danh sách bảng lương nhân viên</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">human_resource.salary</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="human_resource_salary_tree_view" />
+    </record>
+</odoo>
